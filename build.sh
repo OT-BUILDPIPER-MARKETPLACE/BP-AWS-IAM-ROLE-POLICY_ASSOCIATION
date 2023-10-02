@@ -20,7 +20,7 @@ then
     logWarningMessage "Policy with ARN ${POLICY_ARN} doesn't exist please check"
 else
     logInfoMessage "Associating Policy with ARN ${POLICY_ARN} to role [$ROLE_NAME]"
-    aws iam attach-role-policy --policy-arn POLICY_ARN --role-name ${ROLE_NAME}
+    aws iam attach-role-policy --policy-arn ${POLICY_ARN} --role-name ${ROLE_NAME}
 fi
 
 saveTaskStatus ${TASK_STATUS} ${ACTIVITY_SUB_TASK_CODE}
