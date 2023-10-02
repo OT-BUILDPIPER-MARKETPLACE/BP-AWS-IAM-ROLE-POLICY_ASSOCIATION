@@ -14,5 +14,8 @@ docker build -t ot/aws-iam-role-policy-association:0.1 .
 
 ```
 # Associate default policy with default role
-docker run -it --rm -e AWS_ACCESS_KEY_ID=<xxx> -e AWS_SECRET_ACCESS_KEY=<xxx> ot/aws-iam-role-policy-association:0.1
+docker run -it --rm -e AWS_ACCESS_KEY_ID=<xxx> -e AWS_SECRET_ACCESS_KEY=<xxx> -e POLICIES=s3 ot/aws-iam-role-policy-association:0.1
+
+# Associate custome policy with custome role
+docker run -it --rm -e POLICIES="ot-ec2-policy,ot-ecs-policy" -e ROLE_NAME=buildpiper  -e AWS_ACCESS_KEY_ID=<xxx> -e AWS_SECRET_ACCESS_KEY=<xxx> -e POLICIES=s3 ot/aws-iam-role-policy-association:0.1
 ```
