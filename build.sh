@@ -9,7 +9,7 @@ logInfoMessage "I'll be creating associating policies [${POLICIES}] to IAM role 
 sleep  $SLEEP_DURATION
 
 TASK_STATUS=0
-
+getAssumeRole ${AWS_ASSUME_ROLE_ARN}
 AWS_ACCOUNT_ID=`getAccountId`
 IFS=","
 for POLICY_NAME in ${POLICIES}
